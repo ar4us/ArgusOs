@@ -1,11 +1,12 @@
 # Rebuild Playbook Assets and Script Migration
 
-$wallpaperSrc = "C:\Users\ArgusOs\.gemini\antigravity\brain\e7412f7b-b490-4907-be8c-e7794b2c2f2c\argusos_honeycomb_wallpaper_1781268801157.png"
+$wallpaperSrc = "C:\Users\ArgusOs\Downloads\a_wallpaper_for_my_optomaze_202606120551.jpeg"
 $toolkitScriptSrc = "C:\Users\ArgusOs\.gemini\antigravity\brain\e7412f7b-b490-4907-be8c-e7794b2c2f2c\Argus-Toolkit.ps1"
 
 $playbookDest = "C:\Users\ArgusOs\Downloads\XOS V0.505"
 $wallpaperDest1 = Join-Path $playbookDest "playbook.png"
 $wallpaperDest2 = Join-Path $playbookDest "Executables\Windows\Web\Wallpaper\ArgusOS\img0.png"
+$wallpaperDest3 = Join-Path $playbookDest "Executables\Windows\Web\Wallpaper\ArgusOS\img0.jpeg"
 $toolkitDestDir = Join-Path $playbookDest "Executables\ArgusToolkit"
 $toolkitScriptDest = Join-Path $toolkitDestDir "Argus-Toolkit.ps1"
 $iconDest = Join-Path $toolkitDestDir "icon.ico"
@@ -18,6 +19,7 @@ if (Test-Path $wallpaperSrc) {
     $wall2Dir = Split-Path $wallpaperDest2 -Parent
     if (-not (Test-Path $wall2Dir)) { New-Item -ItemType Directory -Path $wall2Dir -Force | Out-Null }
     Copy-Item -Path $wallpaperSrc -Destination $wallpaperDest2 -Force
+    Copy-Item -Path $wallpaperSrc -Destination $wallpaperDest3 -Force
     Write-Output "Wallpaper copied successfully."
 } else {
     Write-Error "Wallpaper source not found at $wallpaperSrc"
