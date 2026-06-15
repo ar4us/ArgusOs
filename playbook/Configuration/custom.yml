@@ -831,7 +831,7 @@ actions:
   - !run: {exe: 'bcdedit.exe', args: '/set bootmenupolicy legacy',    wait: true, showOutput: false, showError: false}
   - !run: {exe: 'bcdedit.exe', args: '/timeout 10',                   wait: true, showOutput: false, showError: false}
   - !cmd: {command: 'label C: ArgusOS', runas: trustedInstaller}
-  - !run: {exe: 'bcdedit.exe', args: '/set {current} description "ArgusOS-Playbook-V1.0"', wait: true, showOutput: false, showError: false}
+  - !run: {exe: 'bcdedit.exe', args: '/set {current} description "ArgusOS"', wait: true, showOutput: false, showError: false}
 
   - !writeStatus: {status: 'Disabling DMA remapping'}
   - !powerShell:
