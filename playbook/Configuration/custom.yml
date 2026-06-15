@@ -13,7 +13,7 @@ actions:
       powercfg /x hibernate-timeout-ac 0;
 
   - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'Manufacturer', type: REG_SZ, data: 'ArgusOS'}
-  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'SupportURL', type: REG_SZ, data: 'https://github.com/imribiy'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'SupportURL', type: REG_SZ, data: 'https://github.com/ar4us/ArgusOs'}
 
   - !powerShell: {command: '.\SetWallpaper.ps1 -Mode Desktop -ImagePath $env:systemroot\Web\Wallpaper\ArgusOS\img0.png', exeDir: true, runas: currentUserElevated}
   - !powerShell: {command: '.\SetWallpaper.ps1 -Mode LockScreen -ImagePath $env:systemroot\Web\Wallpaper\ArgusOS\img0.png', exeDir: true, runas: currentUserElevated}
@@ -923,7 +923,7 @@ actions:
         $mShortcut.Save()
 
   - !writeStatus: {status: 'Running laptop / desktop sensitive script'}
-  # Reset bam to Windows default (3 = Manual) so upgraders from older XOS aren't left with bam=4 on laptops.
+  # Reset bam to Windows default (3 = Manual) so upgraders from older versions aren't left with bam=4 on laptops.
   # laptop-desktop.bat re-disables it (Start=4) on desktops only.
   - !service: {name: 'bam', operation: change, startup: 3}
   - !run: {exeDir: true, exe: 'laptop-desktop.bat', wait: true}

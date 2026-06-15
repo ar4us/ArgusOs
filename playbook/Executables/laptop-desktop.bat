@@ -37,7 +37,7 @@ if %ChassisType% LEQ 7 (
 )
 
 :DESKTOP
-powercfg -import "%windir%\imribiy.pow" 31693169-3169-3169-3169-316931693169 >nul 2>&1
+powercfg -import "%windir%\argusos.pow" 31693169-3169-3169-3169-316931693169 >nul 2>&1
 for %%a in (
 	EnhancedPowerManagementEnabled
 	AllowIdleIrpInD3
@@ -118,7 +118,7 @@ cls
 goto :EOF
 
 :LAPTOP
-powercfg -import "%windir%\imribiy.pow" 31693169-3169-3169-3169-316931693169 >nul 2>&1
+powercfg -import "%windir%\argusos.pow" 31693169-3169-3169-3169-316931693169 >nul 2>&1
 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\serenum" /v "Start" /t REG_DWORD /d "3" /f >nul 2>&1
 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sermouse" /v "Start" /t REG_DWORD /d "3" /f >nul 2>&1
 Reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\serial" /v "Start" /t REG_DWORD /d "3" /f >nul 2>&1

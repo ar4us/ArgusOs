@@ -22,7 +22,7 @@ Below is a detailed summary of what was accomplished and how to deploy it.
 * **Toolkit Icon**: Cropped the stylized cyan "A" eye logo directly from the center of the wallpaper, resized it to 256x256, and converted it to a high-quality Windows `.ico` file. This is embedded directly inside the compiled executable and used for its shortcuts.
 
 ### 4. Compiled Argus Toolkit Executable (`Argus-Toolkit.exe`)
-Replaced the old `XOS-Toolkit-Setup.exe` with a custom standalone compiled executable (**`Argus-Toolkit.exe`**) written in PowerShell WPF/XAML and compiled using `ps2exe` with the UAC admin manifest embedded.
+Replaced the old toolkit installer with a custom standalone compiled executable (**`Argus-Toolkit.exe`**) written in PowerShell WPF/XAML and compiled using `ps2exe` with the UAC admin manifest embedded.
 * **No script blockages**: Runs natively as a standard `.exe` file, avoiding Windows execution policy restrictions or opening in text editors.
 * **Embedded Custom Icon**: Features the beautiful neon "A" eye logo directly on the executable file and all its shortcuts.
 * **Modern Neon UI**: Re-designed the interface with a clean single-window dark-mode design, optimized for visual aesthetics with neon cyan highlight elements.
